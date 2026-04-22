@@ -1,0 +1,82 @@
+@import 'tailwindcss';
+
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter-tight/700.css';
+@import '@fontsource/inter-tight/800.css';
+@import '@fontsource/jetbrains-mono/400.css';
+
+@theme {
+  /* Brand palette — amber primary on zinc-950 base, with lime/cyan/violet secondary pops */
+  --color-brand-50: #fffbeb;
+  --color-brand-100: #fef3c7;
+  --color-brand-200: #fde68a;
+  --color-brand-300: #fcd34d;
+  --color-brand-400: #fbbf24;
+  --color-brand-500: #f59e0b;
+  --color-brand-600: #d97706;
+  --color-brand-700: #b45309;
+
+  --color-pop-lime: #a3e635;
+  --color-pop-cyan: #22d3ee;
+  --color-pop-violet: #a78bfa;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Inter Tight', 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --radius-xl: 0.875rem;
+  --radius-2xl: 1.25rem;
+}
+
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #09090b; /* zinc-950 */
+  color: #fafafa; /* zinc-50 */
+  min-height: 100vh;
+}
+
+/* Focus rings — amber for visibility on dark bg */
+*:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Skip-to-content link */
+.skip-link {
+  position: absolute;
+  top: -48px;
+  left: 1rem;
+  background: var(--color-brand-500);
+  color: #09090b;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  z-index: 100;
+  transition: top 0.15s;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Marquee animation for social proof strip */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
