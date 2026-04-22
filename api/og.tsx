@@ -4,7 +4,7 @@ export const config = {
   runtime: 'edge',
 }
 
-export default function handler() {
+export default function handler(): Response {
   return new ImageResponse(
     (
       <div
