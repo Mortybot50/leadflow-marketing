@@ -4,13 +4,15 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "rewrites": [
-    { "source": "/((?!api/).*)", "destination": "/index.html" }
+    { "source": "/api/og", "destination": "/og.png" },
+    { "source": "/((?!api/|og\\.png|icon\\.svg|apple-touch-icon\\.png|favicon|manifest|robots|assets/).*)", "destination": "/index.html" }
   ],
   "headers": [
     {
-      "source": "/api/og",
+      "source": "/og.png",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=3600, s-maxage=86400" }
+        { "key": "Cache-Control", "value": "public, max-age=3600, s-maxage=86400" },
+        { "key": "Content-Type", "value": "image/png" }
       ]
     },
     {
